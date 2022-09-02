@@ -1,0 +1,20 @@
+# permissions for end users to view logstashconfigwatchers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: logstashconfigwatcher-viewer-role
+rules:
+- apiGroups:
+  - logstash.spacetime.k8s.elastic.co
+  resources:
+  - logstashconfigwatchers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - logstash.spacetime.k8s.elastic.co
+  resources:
+  - logstashconfigwatchers/status
+  verbs:
+  - get

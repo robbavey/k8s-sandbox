@@ -1,0 +1,41 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- resources:
+  - configmaps
+  verbs:
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - logstash.spacetime.k8s.elastic.co
+  resources:
+  - logstashconfigwatchers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - logstash.spacetime.k8s.elastic.co
+  resources:
+  - logstashconfigwatchers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - logstash.spacetime.k8s.elastic.co
+  resources:
+  - logstashconfigwatchers/status
+  verbs:
+  - get
+  - patch
+  - update

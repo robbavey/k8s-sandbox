@@ -1,0 +1,8 @@
+apiVersion: logstash.spacetime.k8s.elastic.co/v1alpha1
+kind: LogstashConfigWatcher
+metadata:
+  name: logstashconfigwatcher-sample
+spec:
+  configMap: logstash-config
+  label:
+    app.kubernetes.io/component: logstash

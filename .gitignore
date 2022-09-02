@@ -1,0 +1,40 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Kubernetes Generated files - skip generated files, except for vendored files
+!vendor/**/zz_generated.*
+
+# editor and IDE paraphernalia
+.idea
+*.swp
+*.swo
+*~
+
+# ignore vendor/
+vendor/
+
+# ignore all generated docs HTML
+docs/html/*
+
+# ignore deployer files
+hack/deployer/deployer
+hack/deployer/config/deployer-config*.yml
+hack/deployer/config/provider
+
+
+
+# ignore generated public key file
+pkg/controller/common/license/zz_generated.pubkey.go
+
+

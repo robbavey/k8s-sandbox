@@ -1,0 +1,24 @@
+# permissions for end users to edit logstashconfigwatchers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: logstashconfigwatcher-editor-role
+rules:
+- apiGroups:
+  - logstash.spacetime.k8s.elastic.co
+  resources:
+  - logstashconfigwatchers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - logstash.spacetime.k8s.elastic.co
+  resources:
+  - logstashconfigwatchers/status
+  verbs:
+  - get

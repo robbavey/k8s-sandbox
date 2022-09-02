@@ -1,0 +1,16 @@
+domain: spacetime.k8s.elastic.co
+layout:
+- go.kubebuilder.io/v3
+projectName: logstash-operator
+repo: spacetime.k8s.elastic.co/logstash
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: spacetime.k8s.elastic.co
+  group: logstash
+  kind: LogstashConfigWatcher
+  path: spacetime.k8s.elastic.co/logstash/api/v1alpha1
+  version: v1alpha1
+version: "3"
